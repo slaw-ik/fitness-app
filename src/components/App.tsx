@@ -19,6 +19,8 @@ import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
 import { useStyles } from './styles';
+import Button from '@material-ui/core/Button';
+import LoginDialog from './LoginDialog';
 
 const Copyright: React.FunctionComponent = () => (
   <Typography variant="body2" color="textSecondary" align="center">
@@ -34,11 +36,16 @@ const Copyright: React.FunctionComponent = () => (
 const App: React.FunctionComponent = () => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
+  const [loginOpen, setLoginOpen] = React.useState(false);
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+  const handleLoginOpen = () => {
+    setLoginOpen(true);
   };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
@@ -59,6 +66,10 @@ const App: React.FunctionComponent = () => {
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
             Dashboard
           </Typography>
+          <Button color="inherit" onClick={handleLoginOpen}>
+            Login
+          </Button>
+          <LoginDialog open={loginOpen} />
         </Toolbar>
       </AppBar>
       <Drawer

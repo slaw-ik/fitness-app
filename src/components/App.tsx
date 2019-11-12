@@ -47,6 +47,9 @@ const App: React.FunctionComponent = () => {
   const handleLoginOpen = () => {
     setLoginOpen(true);
   };
+  const handleLoginClose = () => {
+    setLoginOpen(false);
+  };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
@@ -69,7 +72,7 @@ const App: React.FunctionComponent = () => {
           <Button color="inherit" onClick={handleLoginOpen}>
             Login
           </Button>
-          <LoginDialog open={loginOpen} />
+          <LoginDialog open={loginOpen} handleClose={handleLoginClose} />
         </Toolbar>
       </AppBar>
       <Drawer

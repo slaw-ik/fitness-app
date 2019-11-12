@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -7,20 +7,12 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-type LoginDialogType = {
+interface LoginDialogType {
   open: boolean;
-};
+  handleClose(): void;
+}
 
-const LoginDialog: React.FunctionComponent<LoginDialogType> = props => {
-  console.log(props);
-  const [open, setOpen] = React.useState(props.open);
-
-  console.log(open);
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
+const LoginDialog: React.FC<LoginDialogType> = ({ open, handleClose }: LoginDialogType) => {
   return (
     <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
       <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>

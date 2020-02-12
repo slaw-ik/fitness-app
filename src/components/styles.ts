@@ -79,4 +79,9 @@ export const useStyles = makeStyles(theme => ({
   fixedHeight: {
     height: 240,
   },
+  googleButton: {},
+  fbButton: {
+    backgroundColor: '#4769b0',
+    color: '#fff',
+  },
 }));

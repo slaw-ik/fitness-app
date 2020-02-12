@@ -1,0 +1,16 @@
+import firebase from 'firebase';
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: 'AIzaSyCAyiYk9LBj7p',
+  authDomain: 'fitnessapp-5c333.firebaseapp.com',
+  databaseURL: 'https://fitnessapp-5c333.firebaseio.com',
+  projectId: 'fitnessapp-5c333',
+  storageBucket: 'fitnessapp-5c333.appspot.com',
+  messagingSenderId: '566227',
+  appId: '1:56622705279:web:54675a7c046',
+};
+
+// Initialize Firebase
+const fire = firebase.initializeApp(firebaseConfig);
+export default fire;
